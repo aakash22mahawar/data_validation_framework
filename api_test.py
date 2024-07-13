@@ -8,17 +8,17 @@ url = "http://127.0.0.1:5000/run_pipeline"
 file_path = r"json_data.json"
 
 # Define the tasks order
-tasks_order = ["duplicate_rows", "missing_values",'gender_string_validity']
+tasks_order = ["duplicate_rows", "missing_values","email_validity"]
 
 # Define the tolerance dictionary (optional)
 tolerance_dict = {
-    "ID": 2,
+    "ID": 0,
     "Name": 3,
     "Age": 2
 }
 
 # Define columns for duplicate check (optional)
-columns_for_duplicates = ["ID"]
+columns_for_duplicates = ["ID","Name"]
 
 # Prepare the payload
 payload = {
@@ -37,4 +37,4 @@ response = requests.post(url, data=payload, files=files)
 
 # Print the response
 print(response.status_code)
-print(response.json())
+print(json.dumps(response.json(), indent=4))
