@@ -5,7 +5,7 @@ import json
 url = "http://127.0.0.1:5000/run_pipeline"
 
 # Define the file to upload
-file_path = r"C:\Users\AakashMahawar\Downloads\json_data.json"
+file_path = r"json_data.json"
 
 # Define the tasks order
 tasks_order = ["duplicate_rows", "missing_values",'gender_string_validity']
